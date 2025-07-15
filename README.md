@@ -25,7 +25,7 @@ Cet outil est à utiliser uniquement dans un cadre légal et éthique (tests loc
 ## ⚙️ Compilation
 
 ```bash
-git clone <ton-repo-github>
+git clone https://github.com/ShadowwRoot/RSCAN.git
 cd Rscan
 cargo build --release
 ```
