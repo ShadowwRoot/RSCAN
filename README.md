@@ -3,7 +3,7 @@
 
 ## ✍️ Auteurs
 
-Ton prénom + celui de ton binôme
+Samy FARSSI & Mohamed ELADLOUNI
 
 ## 🛠️ Description
 
@@ -12,7 +12,15 @@ Il récupère aussi les bannières (banners) quand c'est possible, pour identifi
 
 ⚠️ **Avertissement**  
 Cet outil est à utiliser uniquement dans un cadre légal et éthique (tests locaux, lab perso, CTF, autorisation explicite).  
+
 ❌ Il est **interdit** de scanner des systèmes qui ne vous appartiennent pas sans autorisation.
+
+### 🌍 Exemples d’adresses externes (pour tests publics autorisés)
+
+- `scanme.nmap.org` (prévu pour ça)
+- `testphp.vulnweb.com` (pour HTTP)
+
+---
 
 ## ⚙️ Compilation
 
@@ -22,11 +30,15 @@ cd Rscan
 cargo build --release
 ```
 
+---
+
 ## 🚀 Utilisation
 
 ```bash
 cargo run <IP/plage> <port_debut> <port_fin> [--verbose]
 ```
+
+---
 
 ## 🧪 Exemples de tests
 
@@ -42,11 +54,13 @@ cargo run 127.0.0.1 20 100 --verbose
 cargo run 192.168.1.1-5 22 22 --verbose
 ```
 
-### ✅ Scan site externe autorisé (scanme.nmap.org)
+### ✅ Scan site externe autorisé
 
 ```bash
 cargo run scanme.nmap.org 20 100 --verbose
 ```
+
+---
 
 ## 🛎️ Services à démarrer pour les tests locaux
 
@@ -78,6 +92,8 @@ sudo systemctl start mysql
 cargo run 127.0.0.1 3306 3306 --verbose
 ```
 
+---
+
 ## 🌍 Scan de ta box (gateway / routeur)
 
 ```bash
@@ -87,8 +103,29 @@ ip route | grep default
 cargo run 172.20.10.1 1 100 --verbose
 ```
 
+---
+
 ## 💡 Conseils importants
 
-- 🏠 Active les services sur la machine pour bien tester (ex. : `sudo systemctl start ssh`).
-- ⚠️ **Ne scanne jamais des machines sans autorisation.**
-- 🧪 Tu peux ajouter des plages plus larges ou des IP externes si tu as l’autorisation.
+- 🏠 Active les services côté VM ou machine locale avant de lancer le scan.
+- ⚠️ Ne scanne jamais de machines sans autorisation.
+- 🧪 Tu peux tester sur des plages IP plus larges si tu es dans un environnement contrôlé.
+
+---
+
+## ✨ Bonus réalisés
+
+✅ Scan de range d’IP  
+✅ Extraction des bannières (si disponibles)  
+✅ Export des résultats dans un fichier `.txt`  
+✅ Mode verbose pour voir le détail du scan en direct
+
+---
+
+## 🔭 Perspectives (améliorations possibles)
+
+🚀 Ajout de détection avancée des services + version (comme Nmap)  
+🚀 Multithreading plus optimisé pour gagner en vitesse  
+🚀 Interface web ou CLI plus ergonomique  
+🚀 Mode scan furtif (SYN scan)  
+🚀 Intégration d’un rapport HTML/pdf des résultats
