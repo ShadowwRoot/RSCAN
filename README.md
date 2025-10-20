@@ -3,7 +3,7 @@
 
 ## ✍️ Auteurs
 
--- **Shadowroot **
+-- **ShadowRoot **
 
 ## 🛠️ Description
 
